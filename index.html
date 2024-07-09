@@ -32,21 +32,29 @@
       </div>
       <form class="uncomplete ">
         <label for="name">Cardholder Name
-          <input type="text" name="name" id="name" placeholder="e.g. Jane Appleseed">
+          <input class="invalid" type="text" name="name" id="name" placeholder="e.g. Jane Appleseed">
+          <p class="invalidParagraph">Can't be blank</p>
         </label>
         <label for="number">Card Number
-          <input type="number" name="number" id="number" placeholder="e.g. 1234 5678 9123 0000">
+          <input class="invalid" type="number" name="number" id="number" placeholder="e.g. 1234 5678 9123 0000">
+          <p class="invalidParagraph">Wrong format, numbers only</p>
         </label>
         <div class="dates">
-          <label for="dateM" class="expDate">
+          <div class="expDate">
             Exp. Date (MM/YY)
             <div>
-              <input type="number" name="month" id="dateM" placeholder=" MM">
-              <input type="number" name="month" id="dateY" placeholder="YY">
+              <label for="dateM">
+                <input class="invalid" type="number" name="month" id="dateM" placeholder=" MM">
+              </label>
+              <label for="dateY">
+                <input class="invalid" type="number" name="month" id="dateY" placeholder="YY">
+              </label>
             </div>
-          </label>
+            <p class="invalidParagraph">Can't be blank</p>
+          </div>
           <label for="cvc" class="cvc">CVC
-            <input type="number" name="cvc" id="cvc" placeholder="e.g. 123">
+            <input class="invalid" type="number" name="cvc" id="cvc" placeholder="e.g. 123">
+            <p class="invalidParagraph">Can't be blank</p>
           </label>
         </div>
         <button type="button">Confirm</button>

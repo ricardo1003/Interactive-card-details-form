@@ -108,9 +108,10 @@ article{
     flex-direction: column;
     gap: 10px;
 }
-label{
+label, .expDate{
     max-width: 100%;
     display: flex;
+    position: relative;
     flex-direction: column;
     color: hsl(278, 68%, 11%);
     font-size: .75em;
@@ -118,6 +119,7 @@ label{
     text-transform: uppercase;
 }
 label input{
+    position: relative;
     padding: .75rem;
     border: 1px solid hsl(270, 3%, 87%);
     border-radius: 10px;
@@ -126,6 +128,29 @@ label input{
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
+}
+.focusedLabel::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 16px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    background: linear-gradient(90deg, rgba(100,72,254,1) 0%, rgba(96,5,148,1) 100%);
+    z-index: -1;
+    border-radius: 10px;
+
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.dates .focusedLabel::before{
+    top: 21px
+}
+.expDate div .focusedLabel::before{
+    top: -1px;
 }
 label input::placeholder{
     font-family: "Space Grotesk";
@@ -146,9 +171,7 @@ label input::placeholder{
 .expDate div{
     display: flex;
     gap: 5px;
-}
-.expDate div input{
-    width: 50%;
+    width: 48.4%;
 }
 .cvc{
     grid-column: 2/3;
@@ -163,6 +186,7 @@ button{
     background-color: hsl(278, 68%, 11%);
     color: white;
     font-size: 1em;
+    cursor: pointer;
 
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -184,10 +208,22 @@ button{
     display: none;
 }
 
+.invalid{
+    border: 1px solid hsl(0, 100%, 66%);
+}
+
+.invalidParagraph{
+    color: hsl(0, 100%, 66%);
+    text-transform: none;
+}
+
+
+
+
+
+
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
-
-
 @media only screen and (min-width:1024px){
     main{
         flex-direction: row;
