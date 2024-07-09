@@ -17,7 +17,7 @@ main{
 }
 
 .image{
-    min-height: 250px;
+    min-height: 260px;
     background: url("../images/bg-main-desktop.png");
     background-size: cover;
 }
@@ -32,10 +32,11 @@ article{
 .cards{
     width: 350px;
     height: 255px;
-    top: -200px;
+    top: -210px;
     position: absolute;
 }
 .card{
+    box-shadow: 0 20px 20px hsla(0, 0%, 0%, 0.25);
     color: white;
     width: 300px;
     aspect-ratio: 20/11;
@@ -59,7 +60,6 @@ article{
 .card2{
     padding: 1.25rem;
     flex-direction: column;
-
     bottom: 0;
     background: url("../images/bg-card-front.png");
     background-position: center;
@@ -100,9 +100,9 @@ article{
     font-size: .5em;
 }
 
-.uncomplete{
+.uncomplete, .complete{
     width: 100%;
-    padding-top: 5rem;
+    padding: calc(4rem - 10px) 0;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -154,7 +154,7 @@ label input::placeholder{
     grid-column: 2/3;
     gap: 5px;
 }
-.uncomplete button{
+button{
     width: 100%;
     padding: 1rem;
     margin-top: 20px;
@@ -170,9 +170,16 @@ label input::placeholder{
     -o-border-radius: 10px;
 }
 
-
-
-
+.complete{
+    align-items: center;
+}
+.complete h2{
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+.complete p{
+    color: hsl(279, 6%, 55%);
+}
 .noDisplay{
     display: none;
 }
