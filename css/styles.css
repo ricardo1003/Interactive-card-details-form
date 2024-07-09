@@ -99,8 +99,8 @@ article{
 .name{
     font-size: .5em;
 }
-
 .uncomplete, .complete{
+    max-width: 500px;
     width: 100%;
     padding: calc(4rem - 10px) 0;
     box-sizing: border-box;
@@ -184,6 +184,37 @@ button{
     display: none;
 }
 
-
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
+
+
+@media only screen and (min-width:1024px){
+    main{
+        flex-direction: row;
+        height: 100vh;
+    }
+    .image{
+        width: 39.0625%;
+    }
+    article{
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .cards{
+        height: 360px;
+        top: 30%;
+        left: -250px;
+    }
+    .card1{
+        top: auto;
+        bottom: 0;
+    }
+    .card2{
+        top: 0;
+        bottom: auto;
+    }
+    .uncomplete, .complete{
+        width: 100%;
+    }
+}
