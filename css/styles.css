@@ -41,7 +41,7 @@ article{
     aspect-ratio: 20/11;
     box-sizing: border-box;
     position: absolute;
-
+    letter-spacing: 1px;
 }
 .card1{
     top: 0;
@@ -50,7 +50,12 @@ article{
     background-position: center;
     background-size: contain;
 }
-
+.card1 p{
+    position: absolute;
+    right: 36px;
+    top: 76px;
+    font-size: .5em;
+}
 .card2{
     padding: 1.25rem;
     flex-direction: column;
@@ -59,6 +64,40 @@ article{
     background: url("../images/bg-card-front.png");
     background-position: center;
     background-size: contain;
+}
+.card2, .name{
+    display: flex;
+    justify-content: space-between;
+}
+.circles{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.card2 .circle1, .card2 .circle2{
+    border-radius: 100px;
+    aspect-ratio: 1/1;
+    
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    -ms-border-radius: 100px;
+    -o-border-radius: 100px;
+}
+.card2 .circle1{
+    width: 30px;
+    background-color: white;
+}
+.card2 .circle2{
+    width: 13px;
+    border: 2px solid white;
+}
+.number{
+    font-size: .92em;
+    letter-spacing: 4px;
+    margin-bottom: 1rem;
+}
+.name{
+    font-size: .5em;
 }
 
 
