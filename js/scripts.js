@@ -10,6 +10,7 @@ const formElement = document.getElementsByTagName("form")[0]
 const submitButtonElement = document.getElementsByTagName("button")[0]
 const continueButtonElement = document.getElementsByTagName("button")[1]
 
+const labelElements = document.getElementsByTagName("label")
 const invalidParagraphs = [...document.getElementsByClassName("invalidParagraph")]
 const inputElements = [...document.getElementsByTagName("input")]
 
@@ -74,6 +75,12 @@ inputElements[1].addEventListener("input",(event)=>{
         }
     }
 })
-const separateNumbers = cardNumberGroup[0].innerHTML.split("")
-separateNumbers.push("1")
-console.log(separateNumbers)
+
+for(let i=0; i<inputElements.length; i++){
+    inputElements[i].addEventListener("focus",()=>{
+        labelElements[i].classList.add("focusedLabel")
+    })
+    inputElements[i].addEventListener("blur",()=>{
+        labelElements[i].classList.remove("focusedLabel")
+    })
+}

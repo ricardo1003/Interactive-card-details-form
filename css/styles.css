@@ -129,6 +129,9 @@ label input{
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
 }
+input:focus{
+    outline: 0;
+}
 .focusedLabel::before {
     content: "";
     display: block;
@@ -146,11 +149,18 @@ label input{
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
 }
-.dates .focusedLabel::before{
-    top: 21px
+.dates> .focusedLabel::before{
+    top: 21px;
+    bottom: 4px;
 }
 .expDate div .focusedLabel::before{
     top: -1px;
+}
+.expDate div .focusedLabel:first-of-type:before{
+    left: -1px;
+}
+.expDate div .focusedLabel:last-of-type:before{
+    left: -2px;
 }
 label input::placeholder{
     font-family: "Space Grotesk";
