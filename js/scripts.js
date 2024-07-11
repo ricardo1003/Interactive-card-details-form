@@ -21,6 +21,10 @@ submitButtonElement.addEventListener("click",()=>{
             inputElements[i].classList.add("invalid")
         }
     }
+    if(inputElements[1].value.trim().search(/\D+/g) !== -1){
+        invalidParagraphs[1].classList.remove("noDisplay")
+        inputElements[1].classList.add("invalid")
+    }
 })
 
 for(let i=0; i<inputElements.length; i++){
@@ -30,13 +34,46 @@ for(let i=0; i<inputElements.length; i++){
     })
 }
 
-inputElements[1].addEventListener("input",()=>{
-    let group1 = inputElements[1].value.trim().slice(0,4)
-    cardNumberGroup[0].innerHTML = group1
-    let group2 = inputElements[1].value.trim().slice(4,8)
-    cardNumberGroup[1].innerHTML = group2
-    let group3 = inputElements[1].value.trim().slice(8,12)
-    cardNumberGroup[2].innerHTML = group3
-    let group4 = inputElements[1].value.trim().slice(12,16)
-    cardNumberGroup[3].innerHTML = group4
+inputElements[1].addEventListener("input",(event)=>{
+    const noSpace = event.target.value.replace(/\s/g, "")
+    let formattedInput = ""
+    for (let i=0; i< noSpace.length;i++){
+        if(i>0 && i % 4 === 0){
+            formattedInput += " "
+        }
+        formattedInput += noSpace[i]
+    }
+    event.target.value = formattedInput
+    let groups = [
+        inputElements[1].value.trim().slice(0,4),
+        inputElements[1].value.trim().slice(5,9),
+        inputElements[1].value.trim().slice(10,14),
+        inputElements[1].value.trim().slice(15,19)
+    ]
+    if (inputElements[1].value.length <= 4){
+        cardNumberGroup[0].innerHTML = groups[0]
+    }
+    if(inputElements[1].value.length > 4){
+        cardNumberGroup[1].innerHTML = groups[1]
+    }
+    if(inputElements[1].value.length > 8){
+        cardNumberGroup[2].innerHTML = groups[2]
+    }
+    if(inputElements[1].value.length > 12){
+        cardNumberGroup[3].innerHTML = groups[3]
+    }
+    function addZeros(group){
+        while(group.length < 4){
+            group += "0"
+        }
+        return group
+    }
+    for(let i=0; i<groups.length; i++){
+        if(groups[i].length < 4){
+            cardNumberGroup[i].innerHTML = addZeros(groups[i])
+        }
+    }
 })
+const separateNumbers = cardNumberGroup[0].innerHTML.split("")
+separateNumbers.push("1")
+console.log(separateNumbers)
