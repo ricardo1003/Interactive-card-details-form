@@ -26,7 +26,10 @@
           </div>
           <section>
             <p class="number"><span class="numberGroup">0000</span> <span class="numberGroup">0000</span> <span class="numberGroup">0000</span> <span class="numberGroup">0000</span></p>
-            <p class="name">Jane Appleseed<span class="cardDate">00/00</span></p>
+            <div>
+              <p class="name">Jane Appleseed</p>
+              <span class="cardDate">00/00</span>
+            </div>
           </section>
         </div>
       </div>
@@ -44,17 +47,17 @@
             Exp. Date (MM/YY)
             <div>
               <label for="dateM">
-                <input type="number" name="month" id="dateM" placeholder=" MM">
+                <input type="number" name="month" id="dateM" placeholder=" MM" maxlength="2" class="dateInputs" >
               </label>
               <label for="dateY">
-                <input type="number" name="month" id="dateY" placeholder="YY">
+                <input type="number" name="month" id="dateY" placeholder="YY" maxlength="2" class="dateInputs">
               </label>
             </div>
             <p class="invalidParagraph noDisplay">Can't be blank</p>
           </div>
           <label for="cvc" class="cvc">CVC
             <input type="number" name="cvc" id="cvc" placeholder="e.g. 123">
-            <p class="invalidParagraph"></p>
+            <p class="invalidParagraph noDisplay"></p>
             <p class="invalidParagraph noDisplay">Can't be blank</p>
           </label>
         </div>

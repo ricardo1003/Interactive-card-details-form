@@ -65,7 +65,7 @@ article{
     background-position: center;
     background-size: contain;
 }
-.card2, .name{
+.card2, .card2 section div{
     display: flex;
     justify-content: space-between;
 }
@@ -96,8 +96,12 @@ article{
     letter-spacing: 4px;
     margin-bottom: 1rem;
 }
-.name{
+.card2 section div{
     font-size: .5em;
+}
+.name{
+    overflow: hidden;
+    max-width: 226px;
 }
 .uncomplete, .complete{
     max-width: 500px;
@@ -151,7 +155,7 @@ input:focus{
 }
 .dates> .focusedLabel::before{
     top: 21px;
-    bottom: 4px;
+    bottom: -1px;
 }
 .expDate div .focusedLabel::before{
     top: -1px;
