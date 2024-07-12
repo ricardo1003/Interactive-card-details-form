@@ -238,7 +238,7 @@ button{
 
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
-@media only screen and (min-width:1024px){
+@media only screen and (min-width:1190px){
     main{
         flex-direction: row;
         height: 100vh;
@@ -252,9 +252,13 @@ button{
         width: 100%;
     }
     .cards{
-        height: 360px;
-        top: 30%;
-        left: -250px;
+        width: 450px;
+        height: 455px;
+        top: 20%;
+        left: -300px;
+    }
+    .card{
+        width: 400px;
     }
     .card1{
         top: auto;
